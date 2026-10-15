@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#45d6cc"/><stop offset="1" stop-color="#0a6878"/></linearGradient>
+    <linearGradient id="face" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fffdf3"/><stop offset="1" stop-color="#f7e9c4"/></linearGradient>
+    <linearGradient id="sun" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffd84a"/><stop offset="1" stop-color="#ff9a1f"/></linearGradient>
+    <clipPath id="round"><rect width="1024" height="1024" rx="230"/></clipPath>
+    <clipPath id="clip"><rect x="-250" y="-340" width="500" height="640" rx="72"/></clipPath>
+  </defs>
+  <rect width="1024" height="1024" rx="230" fill="url(#bg)"/>
+  <g fill="#ffffff" opacity="0.10" clip-path="url(#round)">
+    <path d="M512 520 L-100 60 L-100 330 Z"/><path d="M512 520 L260 -100 L560 -100 Z"/><path d="M512 520 L1124 40 L1124 330 Z"/>
+    <path d="M512 520 L1124 760 L1124 1010 Z"/><path d="M512 520 L-100 760 L-100 1010 Z"/>
+  </g>
+  <g transform="translate(512 512) rotate(-8)">
+    <ellipse cx="14" cy="372" rx="270" ry="34" fill="#063f4a" opacity="0.35"/>
+    <rect x="-250" y="-286" width="500" height="640" rx="72" fill="#0f8a57"/>
+    <rect x="-250" y="-312" width="500" height="640" rx="72" fill="#e2cf9c"/>
+    <rect x="-250" y="-340" width="500" height="640" rx="72" fill="url(#face)"/>
+    <g clip-path="url(#clip)">
+      <circle cx="30" cy="-70" r="165" fill="url(#sun)"/>
+      <path d="M-250 170 Q-190 140 -125 170 T0 170 T125 170 T250 170 V300 H-250 Z" fill="#2bb9c6"/>
+      <path d="M-250 225 Q-190 198 -125 225 T0 225 T125 225 T250 225 V300 H-250 Z" fill="#1596a8"/>
+      <ellipse cx="0" cy="172" rx="165" ry="46" fill="#f4c96c"/>
+      <ellipse cx="0" cy="162" rx="150" ry="34" fill="#ffdf94"/>
+    </g>
+    <path d="M-16 168 Q-34 30 30 -92" fill="none" stroke="#7a4a22" stroke-width="38" stroke-linecap="round"/>
+    <path d="M-16 168 Q-34 30 30 -92" fill="none" stroke="#a36a35" stroke-width="16" stroke-linecap="round" transform="translate(-6 0)"/>
+    <g fill="#12753f">
+      <path d="M30 -92 Q-70 -180 -205 -78 Q-92 -116 30 -92Z"/>
+      <path d="M30 -92 Q150 -168 232 -52 Q128 -104 30 -92Z"/>
+    </g>
+    <g fill="#1fa457">
+      <path d="M30 -92 Q-44 -238 -160 -236 Q-56 -186 30 -92Z"/>
+      <path d="M30 -92 Q126 -232 226 -204 Q118 -168 30 -92Z"/>
+      <path d="M30 -92 Q20 -236 86 -292 Q74 -190 30 -92Z"/>
+    </g>
+    <circle cx="22" cy="-84" r="17" fill="#7a4a22"/><circle cx="46" cy="-76" r="15" fill="#5f3817"/>
+    <rect x="-250" y="-340" width="500" height="640" rx="72" fill="none" stroke="#ffffff" stroke-width="8" opacity="0.7"/>
+  </g>
+</svg>
