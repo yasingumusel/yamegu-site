@@ -1,9 +1,12 @@
-// Yamegu sitesi. Oyun Google Play'de herkese açılınca LIVE = true yap: düğmeler mağazaya gider, "Coming soon" yazıları kalkar.
+// Yamegu sitesi. App Store düğmeleri her zaman açık (29 Ekim 2026'dan beri yayında).
+// Oyun Google Play'de herkese açılınca LIVE = true yap: Play düğmeleri mağazaya gider, "Coming soon" yazıları kalkar.
 const LIVE = false;
 
 document.addEventListener('DOMContentLoaded', () => {
     // Google Play düğmeleri
     if (!LIVE) {
+        // Üst çubukta yer dar: Play açılana kadar yalnız App Store düğmesi
+        document.querySelector('[data-play-head]')?.remove();
         document.querySelectorAll('[data-play]').forEach(a => {
             a.setAttribute('aria-disabled', 'true');
             a.removeAttribute('href');
@@ -13,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     } else {
         const note = document.querySelector('[data-play-note]');
-        if (note) note.textContent = 'Free on Google Play.';
+        if (note) note.textContent = 'Free on the App Store and Google Play.';
     }
 
     // Videolar yalnızca ekrandayken oynar (veri ve pil tasarrufu); hareket azaltma açıksa kendiliğinden başlamaz
