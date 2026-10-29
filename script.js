@@ -47,6 +47,18 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // Fragman (sitede barındırılan dosya): tıklanınca oynar
+    document.querySelectorAll('[data-video]').forEach(box => {
+        box.querySelector('button').addEventListener('click', () => {
+            const v = document.createElement('video');
+            v.src = box.dataset.video; v.controls = true; v.autoplay = true; v.playsInline = true;
+            v.poster = box.querySelector('img').src;
+            v.setAttribute('aria-label', 'Yamegu: Island Mahjong trailer');
+            box.querySelector('button').replaceWith(v);
+            v.play().catch(() => {}); v.focus();
+        });
+    });
+
     // Fragman: tıklanana kadar YouTube'a bağlanılmaz
     document.querySelectorAll('[data-yt]').forEach(box => {
         box.querySelector('button').addEventListener('click', () => {

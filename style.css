@@ -115,7 +115,7 @@ h3 { font-size: 26px; font-weight: 600; }
 
 /* Fragman (tıklanınca YouTube yüklenir) */
 .yt { max-width: 900px; }
-.yt button, .yt iframe { display: block; width: 100%; aspect-ratio: 16 / 9; border: 0; border-radius: var(--radius); overflow: hidden; padding: 0; cursor: pointer; position: relative; background: #000; box-shadow: 0 24px 60px rgba(0,0,0,.4); }
+.yt button, .yt iframe, .yt video { display: block; width: 100%; aspect-ratio: 16 / 9; border: 0; border-radius: var(--radius); overflow: hidden; padding: 0; cursor: pointer; position: relative; background: #000; box-shadow: 0 24px 60px rgba(0,0,0,.4); }
 .yt button img { width: 100%; height: 100% !important; object-fit: cover; transition: transform .3s; }
 .yt button:hover img { transform: scale(1.03); }
 .yt-play { position: absolute; inset: 0; margin: auto; width: 92px; height: 92px; border-radius: 50%; background: var(--orange); color: #fff; display: grid; place-items: center; border: 5px solid #fff; box-shadow: 0 10px 30px rgba(0,0,0,.4); }
