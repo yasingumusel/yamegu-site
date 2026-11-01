@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Yamegu Challenge</title>
+<meta name="description" content="A friend challenged you in Yamegu: Island Mahjong. Play the same board and beat their time.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="⚔️ Yamegu challenge: can you beat my time?">
+<meta property="og:description" content="Same board, same tiles. Whoever clears it faster wins. Free on iPhone and Android.">
+<meta property="og:image" content="https://www.yamegu.com/img/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a4f55">
+<meta name="robots" content="noindex">
+<link rel="icon" href="/img/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/img/icon_180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;800&display=swap">
+<style>
+  :root { --sea: #0a4f55; --sea2: #127e7f; --gold: #ffd24a; --sand: #fff7e6; --ink: #2c3e50; }
+  * { box-sizing: border-box; }
+  body { margin: 0; min-height: 100vh; font-family: Nunito, system-ui, sans-serif; color: var(--ink);
+         background: radial-gradient(circle at 50% 20%, #2fb7b0 0%, var(--sea2) 45%, var(--sea) 100%); display: flex; justify-content: center; padding: 28px 16px; }
+  .card { width: 100%; max-width: 420px; background: #fff; border-radius: 26px; padding: 26px 22px 22px; text-align: center; box-shadow: 0 18px 50px rgba(0,0,0,0.35); }
+  .logo { display: flex; align-items: center; justify-content: center; gap: 10px; font-family: Fredoka, sans-serif; font-weight: 700; font-size: 30px; color: var(--sea); text-decoration: none; }
+  .logo img { width: 52px; height: 52px; }
+  .swords { font-size: 54px; margin: 14px 0 0; line-height: 1; }
+  h1 { font-family: Fredoka, sans-serif; font-size: 26px; margin: 8px 0 6px; }
+  p { margin: 6px 0; line-height: 1.45; font-weight: 600; }
+  .code { display: inline-block; font-family: Fredoka, sans-serif; font-size: 40px; font-weight: 700; letter-spacing: 8px; padding: 6px 18px; margin: 12px 0 4px;
+          background: var(--sand); border: 3px dashed #f0c060; border-radius: 16px; user-select: all; }
+  .open { display: block; margin: 16px 0 6px; padding: 15px; border-radius: 16px; background: linear-gradient(180deg, #ffd24a, #f39c12); color: #4a2c00;
+          font-family: Fredoka, sans-serif; font-size: 21px; font-weight: 700; text-decoration: none; box-shadow: 0 5px 0 #b36b00; }
+  .copy { border: 0; background: none; color: var(--sea2); font: inherit; font-weight: 800; text-decoration: underline; cursor: pointer; }
+  .steps { text-align: left; background: #f4fbfb; border-radius: 16px; padding: 12px 16px 12px 34px; margin: 16px 0; font-weight: 600; }
+  .steps li { margin: 4px 0; }
+  .stores { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; align-items: center; margin-top: 8px; }
+  .stores img { height: 52px; display: block; }
+  .stores a.gp { display: inline-flex; align-items: center; height: 52px; padding: 0 16px; border-radius: 10px; background: #000; color: #fff; text-decoration: none; font-weight: 800; }
+  .muted { color: #7a8a8c; font-size: 13px; margin-top: 14px; }
+  .hide { display: none; }
+</style>
+</head>
+<body>
+<main class="card">
+  <a class="logo" href="/"><img src="/img/icon.svg" alt=""><span>Yamegu</span></a>
+  <div class="swords">⚔️</div>
+  <h1 data-t="title">A friend challenged you!</h1>
+  <p data-t="lead">Play the same board with the same tiles. Whoever clears it faster wins gold.</p>
+  <div id="codeBox" class="hide">
+    <div class="code" id="code">------</div><br>
+    <button class="copy" id="copy" data-t="copy">Copy code</button>
+    <a class="open" id="open" href="#" data-t="open">Open in the game</a>
+  </div>
+  <ol class="steps">
+    <li data-t="s1">Install Yamegu (free) and open it.</li>
+    <li data-t="s2">Open ⚙️ Settings, then ⚔️ Challenges.</li>
+    <li data-t="s3">Enter the code and tap Join.</li>
+  </ol>
+  <div class="stores">
+    <a href="https://apps.apple.com/app/id6823374237"><img src="/img/app-store-badge.svg" alt="Download on the App Store"></a>
+    <a class="gp" href="https://play.google.com/store/apps/details?id=com.yamegu.mahjong">▶ Google Play</a>
+  </div>
+  <p class="muted" data-t="note">If "Open in the game" does nothing, the game is not installed yet: install it first, then enter the code.</p>
+</main>
+<script>
+  // Meydan okuma kodu ?k=ABC234 ile gelir; oyunda yamegu://c/KOD bağlantısı Meydan okumalar penceresini kod dolu açar
+  var TR = {
+    title: 'Arkadaşın sana meydan okudu!', lead: 'Aynı taşlarla aynı tahtayı oyna. Daha hızlı bitiren altın kazanır.',
+    copy: 'Kodu kopyala', copied: 'Kopyalandı ✓', open: 'Oyunda aç',
+    s1: 'Yamegu’yu (ücretsiz) yükle ve aç.', s2: '⚙️ Ayarlar’ı aç, sonra ⚔️ Meydan okumalar’a dokun.', s3: 'Kodu yaz ve Katıl’a dokun.',
+    note: '"Oyunda aç" bir şey yapmazsa oyun henüz yüklü değildir: önce yükle, sonra kodu gir.'
+  };
+  var tr = (navigator.language || '').toLowerCase().indexOf('tr') === 0;
+  if (tr) {
+    document.documentElement.lang = 'tr';
+    document.title = 'Yamegu meydan okuma';
+    document.querySelectorAll('[data-t]').forEach(function (el) { var v = TR[el.getAttribute('data-t')]; if (v) el.textContent = v; });
+  }
+  var k = (new URLSearchParams(location.search).get('k') || '').toUpperCase().replace(/[^A-Z0-9]/g, '').slice(0, 6);
+  if (/^[A-HJ-NP-Z2-9]{6}$/.test(k)) {
+    document.getElementById('code').textContent = k;
+    document.getElementById('codeBox').classList.remove('hide');
+    document.getElementById('open').href = 'yamegu://c/' + k;
+    document.getElementById('copy').onclick = function () {
+      var b = this;
+      (navigator.clipboard ? navigator.clipboard.writeText(k) : Promise.reject()).then(function () { b.textContent = tr ? TR.copied : 'Copied ✓'; }, function () {});
+    };
+  }
+</script>
+</body>
+</html>
